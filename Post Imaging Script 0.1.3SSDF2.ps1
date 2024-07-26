@@ -19,6 +19,9 @@ powercfg /batteryreport /output "C:\TEMP\battery-report.html"
 Invoke-expression C:\TEMP\battery-report.html
 New-Item "C:\TEMP\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}" -itemType Directory
 powercfg.exe /hibernate off
+powercfg.exe /change monitor-timeout-ac 0
+powercfg.exe /change standby-timeout-ac 0
+powercfg.exe /change disk-timeout-ac 0
 Dism.exe /online /Cleanup-Image /StartComponentCleanup /ResetBase
 Optimize-Volume -DriveLetter C -ReTrim -Verbose
 cleanmgr.exe /AUTOCLEAN
